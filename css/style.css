@@ -36,6 +36,7 @@ header {
     flex: 1 1 auto;
     height: 3.5em;
     width: 100%;
+    font-size: x-large;
 }
 
 #btn-grid {
