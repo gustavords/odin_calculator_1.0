@@ -30,6 +30,7 @@ body {
 
 header {
     margin-top: 2em;
+    font-family: gummy;
     /* border: 1px black solid; */
 }
 
@@ -67,12 +68,16 @@ header {
     width: 100%;
     text-align: end;
     font-style: oblique;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+
 }
 
 #display-calc {
     border: 1px greenyellow solid;
     width: 100%;
     text-align: end;
+    overflow-wrap: anywhere;
 }
 
 #btn-grid {
@@ -88,7 +93,6 @@ header {
 }
 
 .btn {
-    font-family: gummy;
 
     border: 1px black solid;
     flex: 1;
