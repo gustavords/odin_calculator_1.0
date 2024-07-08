@@ -1,25 +1,40 @@
+:root {
+    --watermelon_1: #FF8F8F;
+    --lemon_2: #EEF296;
+    --green-light_3: #9ADE7B;
+    --green-dark_4: #508D69;
+}
+
+@font-face {
+    font-family: gummy;
+    src: url(/fonts/GummyBook.ttf);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+
+
 body {
     background-color: blanchedalmond;
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     gap: 5em;
     min-height: 100vh;
 }
 
 header {
-    margin-top: 1em;
-    border: 1px black solid;
+    margin-top: 2em;
+    /* border: 1px black solid; */
 }
 
 #calculator {
+    background-color: var(--watermelon_1);
     border: 1px green solid;
     flex: 1 1 auto;
     display: flex;
@@ -27,38 +42,92 @@ header {
     gap: 1em;
     width: 20em;
     height: 30em;
+    padding: 1em;
+    border-radius: 3%;
 }
 
 #display {
     border: 1px purple solid;
     background-color: azure;
-    display: flex;
     flex: 1 1 auto;
-    height: 3.5em;
+    height: 3em;
     width: 100%;
     font-size: x-large;
+    border-radius: 3%;
+    padding: .3em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+}
+
+#display-history {
+    border: 1px orange solid;
+    width: 100%;
+    text-align: end;
+    font-style: oblique;
+}
+
+#display-calc {
+    border: 1px greenyellow solid;
+    width: 100%;
+    text-align: end;
 }
 
 #btn-grid {
-    border: 1px orange solid;
     flex: 3;
-
+    padding: .25em;
     display: flex;
     flex-direction: column;
 }
 
 .btn-row {
-    border: 1px blue solid;
     display: flex;
-    flex:1
+    flex: 1
 }
 
 .btn {
-    border: 1px red solid;
+    font-family: gummy;
+
+    border: 1px black solid;
     flex: 1;
+    font-size: xx-large;
 }
-#equals{
-    flex:2.015;
+
+.btn:hover {
+    background-color: rgb(from aqua r g b / .5);
+}
+
+.btn:active {
+    border: 5px grey inset;
+    background-color: plum;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.num {
+    background-color: var(--green-dark_4);
+    color: white;
+}
+
+.operator{
+    background-color: var(--green-light_3);
+    color: black;
+    text-shadow: 1px 0 0 var(--watermelon_1),0 1px 0 var(--watermelon_1),-1px 0 0 var(--watermelon_1),0 -1px 0 var(--watermelon_1);
+}
+
+.options{
+    background-color: var(--lemon_2);
+}
+
+.options>span{
+    color: red;
+}
+
+#equals {
+    flex: 2.015;
 }
 
 footer {
@@ -68,5 +137,4 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
