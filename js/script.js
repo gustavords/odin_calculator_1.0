@@ -54,8 +54,9 @@ function display() {
 
     buttons.forEach((btn) => {
         btn.addEventListener(`click`, (e) => {
-
+            
             displayText = display.textContent;//<----- maybe should be elsewhere
+            // console.log(`event end: ${displayText}`);
 
             if (e.target.classList.contains(`num`) || e.target.id == `decimal`) {
                 // debugger;
@@ -66,7 +67,7 @@ function display() {
                 display.textContent = +display.textContent * (-1);
             }
 
-            if (e.target.value == `clear`) {
+            if (e.currentTarget.value == `clr`) {
                 display.textContent = ``;
                 num_a = ``;
                 num_b = ``;
@@ -77,9 +78,9 @@ function display() {
                 num_a = displayText;
                 operator = e.target.value;
                 display.textContent = ``;
-                console.log(`num_a: ${num_a}`);
-                console.log(`num_b: ${num_b}`);
-                console.log(`operator: ${operator}`);
+                // console.log(`num_a: ${num_a}`);
+                // console.log(`num_b: ${num_b}`);
+                // console.log(`operator: ${operator}`);
             }
             else if (num_a != `` && num_b == `` && e.target.classList.contains(`operator`) && e.target.id != `equals`) {
                 num_b = displayText;
@@ -87,8 +88,8 @@ function display() {
                 num_b = ``;
                 operator = e.target.value;
                 display.textContent = ``;
-                console.log(`num_a: ${num_a}`);
-                console.log(`num_b: ${num_b}`);
+                // console.log(`num_a: ${num_a}`);
+                // console.log(`num_b: ${num_b}`);
                 // operatorNodes.forEach((node) => disableBtn(node));
             }
             else if (num_a != `` && num_b == `` && e.target.id == `equals`) {
@@ -99,21 +100,6 @@ function display() {
                 num_b = ``;
                 operator = ``;
             }
-
-
-            // if (!isNaN(e.target.value) || e.target.value == `.` || e.target.value == `-/+`) {
-            //     if (e.target.value == `-/+`) {
-            //         // display.textContent = +display.textContent * -1;
-            //     }
-            //     else {
-            //         // console.log(`<<<${e.target.value}>>> is number, maybe`)
-            //         display.textContent += e.target.value;
-            //         displayText = display.textContent;
-            //         // console.log(`event end: ${displayText}`);
-            //         // console.log(`isNaN(displayText): ${isNaN(displayText)}`);
-            //     }
-            // }
-
 
             // console.log(`event end: ${displayText}`);
 
